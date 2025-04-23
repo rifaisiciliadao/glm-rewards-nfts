@@ -22,7 +22,7 @@ async function main() {
                 console.log("Number of rewards:", rewarded)
                 const nftRewarded = await contract.nftRewarded(beneficiary)
                 if (!nftRewarded) {
-                    console.log("Rewarding user:", beneficiary)
+                    console.log("Rewarding user:", beneficiary, "with balance:", epochList[i].split(',')[1])
                     const nonce = await provider.getTransactionCount(wallet.address)
                     console.log("Nonce:", nonce)
                     const gasPrice = (await provider.getGasPrice())
